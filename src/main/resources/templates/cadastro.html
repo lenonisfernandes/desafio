@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<h1>Cadastrar Aluno</h1>
+
+<form method="post" action="/aluno/incluir">
+  <label for="fname">Nome:</label><br>
+  <input type="text" name="nome"><br><br>
+  
+  <label for="fname">Data de Nascimento:</label><br>
+  <input type="date" name="data"><br><br>
+  
+  <select name="idturma">
+	  <th:block th:each="turma : ${turmas}">
+	  	<option th:value=${turma.id} th:text=${turma.nome}>...</option>
+	  </th:block>
+  </select>
+  
+  <input type="submit" value="Submit">
+</form>
+
+
+</body>
+</html>
